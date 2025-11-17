@@ -43,4 +43,19 @@
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
   }
+
+  /* Softer, vivid background with subtle grid and radial color washes */
+  .app-bg {
+    /* Base */
+    background-color: #0b0b14;
+    /* Top grid (very subtle) */
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 28px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 28px),
+      radial-gradient(650px 400px at 20% -10%, rgba(99,102,241,0.25), transparent 60%),
+      radial-gradient(800px 500px at 110% 10%, rgba(147,51,234,0.22), transparent 60%),
+      radial-gradient(600px 420px at -10% 110%, rgba(56,189,248,0.18), transparent 60%),
+      linear-gradient(180deg, #0b0b14 0%, #0e1022 35%, #0a0b1a 100%);
+    background-blend-mode: normal, normal, screen, screen, screen, normal;
+  }
 }
