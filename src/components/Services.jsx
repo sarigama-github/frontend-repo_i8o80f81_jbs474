@@ -1,35 +1,36 @@
 import React, { useMemo, useState } from 'react'
 import { Code, PenTool, Megaphone, Camera, Cpu, Database, BarChart3, FileText, Globe, Shield, Wrench, Home, Plug, Paintbrush, Bug, Truck, BookOpen, Scissors, Mic, Headphones } from 'lucide-react'
 
+// Representative imagery for each category (royalty-free Unsplash pics)
 const freelance = [
-  { name: 'Web Development', icon: Code },
-  { name: 'UI/UX Design', icon: PenTool },
-  { name: 'Digital Marketing', icon: Megaphone },
-  { name: 'Photography & Video', icon: Camera },
-  { name: 'AI & ML', icon: Cpu },
-  { name: 'Data Science', icon: Database },
-  { name: 'Analytics & BI', icon: BarChart3 },
-  { name: 'Content Writing', icon: FileText },
-  { name: 'SEO & SEM', icon: Globe },
-  { name: 'Cybersecurity', icon: Shield },
+  { name: 'Web Development', icon: Code, img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'UI/UX Design', icon: PenTool, img: 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Digital Marketing', icon: Megaphone, img: 'https://images.unsplash.com/photo-1556610964-7f4aa95d2d19?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Photography & Video', icon: Camera, img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'AI & ML', icon: Cpu, img: 'https://images.unsplash.com/photo-1555252586-9f6254f1d1c5?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Data Science', icon: Database, img: 'https://images.unsplash.com/photo-1551281044-8b39f76a3e59?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Analytics & BI', icon: BarChart3, img: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Content Writing', icon: FileText, img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'SEO & SEM', icon: Globe, img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Cybersecurity', icon: Shield, img: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1400&auto=format&fit=crop' },
 ]
 
 const local = [
-  { name: 'Home Repairs', icon: Wrench },
-  { name: 'House Cleaning', icon: Home },
-  { name: 'Electricians', icon: Plug },
-  { name: 'Painting', icon: Paintbrush },
-  { name: 'Pest Control', icon: Bug },
-  { name: 'Movers & Packers', icon: Truck },
-  { name: 'Tutors', icon: BookOpen },
-  { name: 'Salon at Home', icon: Scissors },
-  { name: 'Voice & Audio', icon: Mic },
-  { name: 'Music Lessons', icon: Headphones },
+  { name: 'Home Repairs', icon: Wrench, img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'House Cleaning', icon: Home, img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Electricians', icon: Plug, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Painting', icon: Paintbrush, img: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Pest Control', icon: Bug, img: 'https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Movers & Packers', icon: Truck, img: 'https://images.unsplash.com/photo-1582582621951-cbca1f6e4e7d?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Tutors', icon: BookOpen, img: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Salon at Home', icon: Scissors, img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Voice & Audio', icon: Mic, img: 'https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=1400&auto=format&fit=crop' },
+  { name: 'Music Lessons', icon: Headphones, img: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1400&auto=format&fit=crop' },
 ]
 
 function Pill({ label }) {
   return (
-    <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-white/10 text-white/70 border border-white/10">
+    <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-black/40 backdrop-blur text-white/80 border border-white/20">
       {label}
     </span>
   )
@@ -38,14 +39,23 @@ function Pill({ label }) {
 function Card({ item, badge }) {
   const Icon = item.icon
   return (
-    <div className="group relative rounded-2xl p-4 sm:p-5 bg-white/5 border border-white/10 hover:border-white/20 transition overflow-hidden">
-      <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-15 blur-2xl transition pointer-events-none" />
-      <div className="flex items-center gap-3">
-        <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-indigo-600/20 text-white">
+    <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+        style={{ backgroundImage: `url(${item.img})` }}
+      />
+      {/* Gradient overlays for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+      <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-indigo-600/0 opacity-0 group-hover:opacity-20 blur-2xl transition" />
+
+      {/* Content */}
+      <div className="relative p-4 sm:p-5 flex items-center gap-3">
+        <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-white/10 text-white backdrop-blur-sm border border-white/10">
           <Icon className="h-5 w-5" />
         </div>
         <div className="min-w-0">
-          <p className="text-sm font-medium text-white truncate">{item.name}</p>
+          <p className="text-sm font-semibold text-white drop-shadow-sm truncate">{item.name}</p>
           <div className="mt-1"><Pill label={badge} /></div>
         </div>
       </div>
@@ -67,11 +77,26 @@ export default function Services() {
 
   const tabs = ['All', 'Freelance', 'Local']
 
+  // Build animated strip assets using first few images from each list
+  const stripImages = [
+    ...freelance.slice(0, 6).map(s => s.img),
+    ...local.slice(0, 6).map(s => s.img),
+  ]
+
   return (
     <section className="relative bg-[#0b0b14] py-20">
+      <style>{`
+        @keyframes marqueeX {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+
+      {/* Top divider */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
       </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -80,6 +105,22 @@ export default function Services() {
           <p className="mt-3 text-white/70 max-w-2xl mx-auto">
             Browse popular categories from global freelancing and trusted local professionals — unified in a single marketplace.
           </p>
+        </div>
+
+        {/* Animated image ribbon showcasing services */}
+        <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b14] via-transparent to-[#0b0b14] pointer-events-none" />
+          <div className="flex gap-3 p-3" style={{ width: '200%' }}>
+            {[0,1].map((dup) => (
+              <div key={dup} className="flex gap-3" style={{ animation: 'marqueeX 25s linear infinite' }}>
+                {stripImages.map((src, idx) => (
+                  <div key={`${dup}-${idx}`} className="h-20 sm:h-24 w-36 sm:w-44 rounded-xl overflow-hidden border border-white/10 bg-black/30">
+                    <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${src})` }} />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Tabs */}
