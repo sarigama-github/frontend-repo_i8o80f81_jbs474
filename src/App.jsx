@@ -3,8 +3,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Services from './components/Services'
-import Logistics from './components/Logistics'
 import Restaurants from './components/Restaurants'
+import Farmers from './components/Farmers'
+import Logistics from './components/Logistics'
 import Showcase from './components/Showcase'
 import Footer from './components/Footer'
 
@@ -16,6 +17,7 @@ function App() {
       <Features />
       <Services />
       <Restaurants />
+      <Farmers />
       <Logistics />
       <Showcase />
       <Footer />
