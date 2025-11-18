@@ -144,7 +144,7 @@ export default function Farmers() {
       tag: 'Fresh',
       farmer: 'Adewale Farms',
       location: '12 km',
-      img: 'https://images.unsplash.com/photo-1546470427-c7b9b9f1f96f?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1600&auto=format&fit=crop',
     },
     {
       id: 2,
@@ -154,7 +154,7 @@ export default function Farmers() {
       tag: 'Grade A',
       farmer: 'Green Valley',
       location: '8 km',
-      img: 'https://images.unsplash.com/photo-1517957754645-708b2bfb364f?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1517957754645-708b2bfb364f?q=80&w=1600&auto=format&fit=crop',
     },
     {
       id: 3,
@@ -164,7 +164,7 @@ export default function Farmers() {
       tag: 'Organic',
       farmer: 'Suncrest Apiary',
       location: '24 km',
-      img: 'https://images.unsplash.com/photo-1505575972945-33c94ef1d2f2?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1484910292437-025e5d13ce87?q=80&w=1600&auto=format&fit=crop',
     },
     {
       id: 4,
@@ -174,7 +174,7 @@ export default function Farmers() {
       tag: 'New Harvest',
       farmer: 'Kwara Roots',
       location: '15 km',
-      img: 'https://images.unsplash.com/photo-1603048297172-c92544798b02?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=1600&auto=format&fit=crop',
     },
   ]
 
@@ -185,12 +185,12 @@ export default function Farmers() {
       type: 'Vegetables & Tubers',
       rating: 4.8,
       reviews: 312,
-      avatar: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=800&auto=format&fit=crop',
+      avatar: 'https://images.unsplash.com/photo-1593879081672-2a9ffc5a0e2b?q=80&w=800&auto=format&fit=crop',
       topProducts: [
-        'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1524594154908-edd566190da3?q=80&w=600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1604908176997-431c9ea53afd?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd4?q=80&w=400&auto=format&fit=crop',
       ],
     },
     {
@@ -199,12 +199,12 @@ export default function Farmers() {
       type: 'Poultry & Dairy',
       rating: 4.6,
       reviews: 189,
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
+      avatar: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=800&auto=format&fit=crop',
       topProducts: [
-        'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1526312426976-593c2b999fb1?q=80&w=600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=600&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1495197359483-d092478c170a?q=80&w=600&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1526312426976-593c2b999fb1?q=80&w=400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=400&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1495197359483-d092478c170a?q=80&w=400&auto=format&fit=crop',
       ],
     },
   ]
@@ -215,7 +215,7 @@ export default function Farmers() {
       name: 'Sweet Pineapples',
       price: '$5.00',
       unit: '/ piece',
-      img: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1600&auto=format&fit=crop',
       badges: ['Organic', 'New Harvest'],
       metrics: { moisture: 82, weight: '1.8kg', grade: 'A' },
       delivery: 'Delivered today',
@@ -226,7 +226,7 @@ export default function Farmers() {
       name: 'Maize (Corn)',
       price: '$2.80',
       unit: '/ kg',
-      img: 'https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=1600&auto=format&fit=crop',
       badges: ['Limited Stock'],
       metrics: { moisture: 12, weight: '50kg', grade: 'B+' },
       delivery: '2-3 days',
@@ -237,7 +237,7 @@ export default function Farmers() {
       name: 'Cassava Flour',
       price: '$14.00',
       unit: '/ 5kg',
-      img: 'https://images.unsplash.com/photo-1627740653389-96dc177a64e6?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1627740653389-96dc177a64e6?q=80&w=1600&auto=format&fit=crop',
       badges: ['Gluten-free'],
       metrics: { moisture: 10, weight: '5kg', grade: 'A-' },
       delivery: 'Delivered tomorrow',
@@ -252,7 +252,7 @@ export default function Farmers() {
       desc: '20+ fresh produce varieties',
       farm: 'Adewale Farms',
       supply: 'Retail & Wholesale',
-      img: 'https://images.unsplash.com/photo-1500937386664-56f3d81d1e9a?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1500937386664-56f3d81d1e9a?q=80&w=1600&auto=format&fit=crop',
     },
     {
       id: 2,
@@ -260,7 +260,7 @@ export default function Farmers() {
       desc: '10+ poultry products available',
       farm: 'Green Valley',
       supply: 'Bulk Orders',
-      img: 'https://images.unsplash.com/photo-1584118624012-df056829fbd5?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1584118624012-df056829fbd5?q=80&w=1600&auto=format&fit=crop',
     },
     {
       id: 3,
@@ -268,7 +268,7 @@ export default function Farmers() {
       desc: 'Fresh milk, yogurt, cheese',
       farm: 'Northern Belt Co-op',
       supply: 'Retail',
-      img: 'https://images.unsplash.com/photo-1505575972945-33c94ef1d2f2?q=80&w=1500&auto=format&fit=crop',
+      img: 'https://images.unsplash.com/photo-1505575972945-33c94ef1d2f2?q=80&w=1600&auto=format&fit=crop',
     },
   ]
 
