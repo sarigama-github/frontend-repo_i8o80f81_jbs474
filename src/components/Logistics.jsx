@@ -57,16 +57,16 @@ export default function Logistics() {
             return (
               <div key={i} className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
                 {/* Background image */}
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-80" style={{ backgroundImage: `url(${c.img})` }} />
-                {/* Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
+                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url(${c.img})` }} />
+                {/* Overlay for clarity */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/25" />
                 {/* Content */}
                 <div className="relative p-6">
                   <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-white text-slate-900 border border-slate-200 shadow-sm">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-3 text-lg font-semibold text-slate-900">{c.title}</h3>
-                  <p className="mt-2 text-sm text-slate-700">{c.desc}</p>
+                  <p className="mt-2 text-sm text-slate-800">{c.desc}</p>
                 </div>
               </div>
             )
@@ -75,7 +75,7 @@ export default function Logistics() {
 
         {/* Tracking timeline */}
         <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3 text-slate-700">
+          <div className="flex items-center gap-3 text-slate-800">
             <div className="h-10 w-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
               <Truck className="h-5 w-5" />
             </div>

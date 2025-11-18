@@ -42,11 +42,11 @@ function Card({ item, badge }) {
     <div className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-80"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
         style={{ backgroundImage: `url(${item.img})` }}
       />
-      {/* Gradient overlays for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
+      {/* Overlay tuned for clarity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/25" />
 
       {/* Content */}
       <div className="relative p-4 sm:p-5 flex items-center gap-3">

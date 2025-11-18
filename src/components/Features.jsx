@@ -48,18 +48,18 @@ function Features() {
             >
               {/* Background image */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-70"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url(${c.img})` }}
               />
-              {/* Overlays for readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
+              {/* Overlay tuned for clarity (subtle dark for contrast) */}
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/20" />
 
               {/* Content */}
               <div className="relative p-6">
-                <p className="text-xs font-medium text-slate-700 backdrop-blur-[1px]">{c.tag}</p>
+                <p className="text-xs font-medium text-slate-800">{c.tag}</p>
                 <h3 className="mt-2 text-xl font-semibold text-slate-900">{c.title}</h3>
-                <p className="mt-2 text-sm text-slate-700 max-w-md">{c.desc}</p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-800">
+                <p className="mt-2 text-sm text-slate-800 max-w-md">{c.desc}</p>
+                <ul className="mt-4 space-y-2 text-sm text-slate-900">
                   {c.points.map((p, idx) => (
                     <li key={idx} className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600" />

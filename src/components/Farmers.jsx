@@ -7,22 +7,23 @@ function FarmerProductSnapshotCard({ item }) {
     <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md">
       <div className="relative">
         <img src={item.img} alt={item.name} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/30 to-white" />
+        {/* Overlay tuned for clarity (remove milky wash) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/20" />
       </div>
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
             <h3 className="text-lg font-semibold tracking-tight text-slate-900">{item.name}</h3>
-            <div className="mt-1 text-sm text-slate-700">{item.price} <span className="text-slate-500">{item.unit}</span></div>
+            <div className="mt-1 text-sm text-slate-800">{item.price} <span className="text-slate-600">{item.unit}</span></div>
             <div className="mt-2 inline-flex items-center gap-2 text-xs">
               <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">{item.tag}</span>
             </div>
           </div>
         </div>
         <div className="mt-4 flex items-center justify-between border-t border-slate-200 pt-3">
-          <div className="flex items-center gap-2 text-sm text-slate-700">
+          <div className="flex items-center gap-2 text-sm text-slate-800">
             <span className="inline-flex items-center gap-1"><BadgeCheck className="h-4 w-4 text-emerald-500" /> {item.farmer}</span>
-            <span className="text-slate-300">•</span>
+            <span className="text-slate-400">•</span>
             <span className="inline-flex items-center gap-1"><MapPin className="h-4 w-4 text-sky-500" /> {item.location}</span>
           </div>
           <div className="flex gap-2">
@@ -46,11 +47,11 @@ function FarmerProfileCard({ farmer }) {
             <h3 className="text-lg font-semibold tracking-tight text-slate-900">{farmer.name}</h3>
             <CheckCircle className="h-4 w-4 text-emerald-500" />
           </div>
-          <div className="mt-1 text-sm text-slate-700">{farmer.type}</div>
-          <div className="mt-2 inline-flex items-center gap-2 text-sm text-slate-700">
+          <div className="mt-1 text-sm text-slate-800">{farmer.type}</div>
+          <div className="mt-2 inline-flex items-center gap-2 text-sm text-slate-800">
             <Star className="h-4 w-4 text-yellow-500" />
             <span>{farmer.rating}</span>
-            <span className="text-slate-400">({farmer.reviews} reviews)</span>
+            <span className="text-slate-600">({farmer.reviews} reviews)</span>
           </div>
         </div>
       </div>
@@ -72,7 +73,8 @@ function ProductMetricsCard({ product }) {
     <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md">
       <div className="relative">
         <img src={product.img} alt={product.name} className="h-44 w-full object-cover transition duration-500 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white" />
+        {/* Overlay tuned for clarity */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/20" />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           {product.badges.map((b, i) => (
             <span key={i} className="px-2 py-1 rounded-full text-xs bg-white border border-slate-200 shadow-sm">{b}</span>
@@ -81,17 +83,17 @@ function ProductMetricsCard({ product }) {
       </div>
       <div className="p-4">
         <h3 className="text-base font-semibold text-slate-900">{product.name}</h3>
-        <div className="mt-1 text-sm text-slate-700">{product.price} <span className="text-slate-500">{product.unit}</span></div>
-        <div className="mt-3 grid grid-cols-3 gap-2 text-xs text-slate-700">
+        <div className="mt-1 text-sm text-slate-800">{product.price} <span className="text-slate-600">{product.unit}</span></div>
+        <div className="mt-3 grid grid-cols-3 gap-2 text-xs text-slate-800">
           <div className="flex items-center gap-1"><Leaf className="h-4 w-4 text-emerald-600" /> {product.metrics.moisture}%</div>
           <div className="flex items-center gap-1"><Package className="h-4 w-4 text-sky-600" /> {product.metrics.weight}</div>
           <div className="flex items-center gap-1"><Zap className="h-4 w-4 text-purple-600" /> {product.metrics.grade}</div>
         </div>
         <div className="mt-4 flex items-center justify-between border-t border-slate-200 pt-3">
-          <div className="flex items-center gap-2 text-sm text-slate-700">
+          <div className="flex items-center gap-2 text-sm text-slate-800">
             <Timer className="h-4 w-4 text-indigo-600" /> {product.delivery}
           </div>
-          <div className="text-sm text-slate-600">Seller: <span className="font-medium text-slate-900">{product.seller}</span></div>
+          <div className="text-sm text-slate-700">Seller: <span className="font-medium text-slate-900">{product.seller}</span></div>
         </div>
         <div className="mt-3 flex items-center justify-between">
           <button className="px-3 py-1.5 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium text-white hover:opacity-90">Add</button>
@@ -107,13 +109,14 @@ function FarmCategoryCard({ category }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md bg-white">
       <img src={category.img} alt={category.name} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white" />
+      {/* Overlay tuned for clarity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/25" />
       <div className="absolute bottom-0 left-0 right-0 p-5">
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-sm text-slate-600">{category.farm}</div>
+            <div className="text-sm text-slate-700">{category.farm}</div>
             <h3 className="text-xl font-semibold text-slate-900">{category.name}</h3>
-            <p className="mt-1 text-sm text-slate-700">{category.desc}</p>
+            <p className="mt-1 text-sm text-slate-800">{category.desc}</p>
           </div>
           <span className="px-2.5 py-1 rounded-full text-xs bg-white border border-slate-200 shadow-sm">{category.supply}</span>
         </div>

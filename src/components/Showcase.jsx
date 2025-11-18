@@ -55,11 +55,11 @@ function Showcase() {
               >
                 {/* Background image */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-80"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url(${s.img})` }}
                 />
-                {/* Gradient overlays for readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
+                {/* Overlay tuned for clarity */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-slate-900/10 to-slate-900/25" />
 
                 {/* Content */}
                 <div className="relative p-6">
@@ -68,9 +68,9 @@ function Showcase() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-700">{s.step}</p>
+                      <p className="text-xs text-slate-800">{s.step}</p>
                       <h3 className="text-xl font-semibold text-slate-900 mt-1">{s.title}</h3>
-                      <p className="text-slate-700 text-sm mt-2 max-w-md">{s.desc}</p>
+                      <p className="text-slate-800 text-sm mt-2 max-w-md">{s.desc}</p>
                     </div>
                   </div>
 
