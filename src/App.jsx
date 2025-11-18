@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Services from './components/Services'
 import Logistics from './components/Logistics'
+import Restaurants from './components/Restaurants'
 import Showcase from './components/Showcase'
 import Footer from './components/Footer'
 
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <Features />
       <Services />
+      <Restaurants />
       <Logistics />
       <Showcase />
       <Footer />
