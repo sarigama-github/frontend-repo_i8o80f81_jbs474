@@ -133,7 +133,7 @@ const horizontalFoods = [
 function StatusChip({ status }) {
   const open = status?.toLowerCase().includes('open')
   return (
-    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${open ? 'bg-emerald-500/15 text-emerald-300 border-emerald-400/20' : 'bg-rose-500/15 text-rose-300 border-rose-400/20'}`}>
+    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${open ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-rose-50 text-rose-700 border-rose-200'}`}>
       {open ? 'Open Now' : 'Closed'}
     </span>
   )
@@ -142,7 +142,7 @@ function StatusChip({ status }) {
 function PromoChip({ label }) {
   if (!label) return null
   return (
-    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-white shadow-lg shadow-indigo-900/20">
+    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-white shadow-sm">
       <BadgePercent className="h-3.5 w-3.5" />
       {label}
     </span>
@@ -151,27 +151,26 @@ function PromoChip({ label }) {
 
 function HeroRestaurantCard({ data }) {
   return (
-    <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-black/40">
+    <div className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
       {/* Background */}
-      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${data.img})` }} />
+      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80" style={{ backgroundImage: `url(${data.img})` }} />
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/80" />
-      <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-indigo-600/0 opacity-0 group-hover:opacity-20 blur-2xl transition pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
 
       {/* Content */}
       <div className="relative p-6 sm:p-8 flex flex-col gap-4">
         {/* Logo + Name */}
         <div className="flex items-end gap-3">
-          <div className="h-14 w-14 rounded-xl overflow-hidden ring-2 ring-white/20 bg-white/10 backdrop-blur border border-white/10">
+          <div className="h-14 w-14 rounded-xl overflow-hidden ring-2 ring-white bg-white border border-slate-200 shadow-sm">
             <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${data.logo})` }} />
           </div>
           <div>
-            <h3 className="text-2xl sm:text-3xl font-bold drop-shadow-sm">{data.name}</h3>
-            <div className="mt-1 flex items-center gap-3 text-sm text-white/85">
-              <span className="inline-flex items-center gap-1"><Star className="h-4 w-4 text-yellow-400" /> {data.rating} <span className="text-white/60">({data.reviews})</span></span>
-              <span className="text-white/50">•</span>
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">{data.name}</h3>
+            <div className="mt-1 flex items-center gap-3 text-sm text-slate-700">
+              <span className="inline-flex items-center gap-1"><Star className="h-4 w-4 text-yellow-500" /> {data.rating} <span className="text-slate-500">({data.reviews})</span></span>
+              <span className="text-slate-400">•</span>
               <span className="inline-flex items-center gap-1"><Timer className="h-4 w-4" /> {data.time}</span>
-              <span className="text-white/50">•</span>
+              <span className="text-slate-400">•</span>
               <span className="inline-flex items-center gap-1"><Navigation className="h-4 w-4" /> {data.distance}</span>
             </div>
           </div>
@@ -180,7 +179,7 @@ function HeroRestaurantCard({ data }) {
         {/* Tags */}
         <div className="flex flex-wrap items-center gap-2 text-xs">
           {data.cuisines.map((t) => (
-            <span key={t} className="px-2 py-1 rounded-full bg-black/40 border border-white/10 text-white/80">{t}</span>
+            <span key={t} className="px-2 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">{t}</span>
           ))}
         </div>
 
@@ -196,21 +195,21 @@ function HeroRestaurantCard({ data }) {
 
 function CompactRestaurantCard({ r }) {
   return (
-    <div className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+    <div className="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
       <div className="relative">
-        <div className="aspect-square w-full bg-cover bg-center" style={{ backgroundImage: `url(${r.img})` }} />
+        <div className="aspect-square w-full bg-cover bg-center opacity-90" style={{ backgroundImage: `url(${r.img})` }} />
         {r.promo && (
           <div className="absolute top-2 right-2"><PromoChip label={r.promo} /></div>
         )}
       </div>
       <div className="p-4">
-        <p className="font-semibold truncate">{r.name}</p>
-        <div className="mt-1 flex items-center gap-2 text-sm text-white/80">
-          <span className="inline-flex items-center gap-1"><Star className="h-4 w-4 text-yellow-400" /> {r.rating}</span>
-          <span className="text-white/50">•</span>
+        <p className="font-semibold truncate text-slate-900">{r.name}</p>
+        <div className="mt-1 flex items-center gap-2 text-sm text-slate-700">
+          <span className="inline-flex items-center gap-1"><Star className="h-4 w-4 text-yellow-500" /> {r.rating}</span>
+          <span className="text-slate-400">•</span>
           <span>{r.time}</span>
         </div>
-        <div className="mt-1 text-sm text-white/70">{r.price} <span className="text-white/50">•</span> {r.cuisine}</div>
+        <div className="mt-1 text-sm text-slate-600">{r.price} <span className="text-slate-400">•</span> {r.cuisine}</div>
       </div>
     </div>
   )
@@ -218,16 +217,15 @@ function CompactRestaurantCard({ r }) {
 
 function FeaturedFoodCard({ f }) {
   return (
-    <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40">
-      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url(${f.img})` }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/80" />
-      <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-indigo-600/0 opacity-0 group-hover:opacity-20 blur-2xl transition pointer-events-none" />
+    <div className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-90" style={{ backgroundImage: `url(${f.img})` }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
       <div className="relative p-5">
-        <p className="font-semibold text-lg drop-shadow-sm">{f.name}</p>
-        <p className="mt-1 text-sm text-white/80 max-w-sm">{f.desc}</p>
+        <p className="font-semibold text-lg text-slate-900">{f.name}</p>
+        <p className="mt-1 text-sm text-slate-700 max-w-sm">{f.desc}</p>
         <div className="mt-4 flex items-center justify-between">
-          <p className="font-semibold">{f.price}</p>
-          <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 hover:bg-white/15 transition">
+          <p className="font-semibold text-slate-900">{f.price}</p>
+          <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 transition shadow-sm">
             <ShoppingCart className="h-4 w-4" />
             <span className="text-sm">Add</span>
           </button>
@@ -239,22 +237,22 @@ function FeaturedFoodCard({ f }) {
 
 function HorizontalFoodCard({ item }) {
   return (
-    <div className="group flex min-w-[320px] sm:min-w-[380px] gap-4 rounded-2xl border border-white/10 bg-white/5 p-3">
+    <div className="group flex min-w-[320px] sm:min-w-[380px] gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition">
       <div className="h-24 w-24 rounded-xl overflow-hidden flex-shrink-0">
         <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${item.img})` }} />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="font-semibold truncate">{item.name}</p>
-        <p className="mt-1 text-sm text-white/80 line-clamp-2">{item.desc}</p>
+        <p className="font-semibold truncate text-slate-900">{item.name}</p>
+        <p className="mt-1 text-sm text-slate-700 line-clamp-2">{item.desc}</p>
         <div className="mt-2 flex items-center justify-between">
-          <div className="text-sm text-white/85 inline-flex items-center gap-2">
-            <span className="inline-flex items-center gap-1"><Star className="h-4 w-4 text-yellow-400" /> {item.rating}</span>
-            <span className="text-white/50">•</span>
+          <div className="text-sm text-slate-700 inline-flex items-center gap-2">
+            <span className="inline-flex items-center gap-1"><Star className="h-4 w-4 text-yellow-500" /> {item.rating}</span>
+            <span className="text-slate-400">•</span>
             <span>{item.tag}</span>
           </div>
           <div className="flex items-center gap-3">
-            <p className="font-semibold whitespace-nowrap">{item.price}</p>
-            <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 hover:bg-white/15 transition">
+            <p className="font-semibold text-slate-900 whitespace-nowrap">{item.price}</p>
+            <button className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 transition shadow-sm">
               <ShoppingCart className="h-4 w-4" />
               <span className="text-sm">Add</span>
             </button>
@@ -267,19 +265,19 @@ function HorizontalFoodCard({ item }) {
 
 export default function Restaurants() {
   return (
-    <section className="relative bg-[#0b0b14] py-20">
+    <section className="relative bg-white py-20">
       {/* Divider */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
             Hotels & Restaurants
           </h2>
-          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
+          <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             Explore top hotel dining and local favorites. Order in or reserve a table — fast, reliable, delightful.
           </p>
         </div>
@@ -294,8 +292,8 @@ export default function Restaurants() {
         {/* COMPACT GRID */}
         <div className="mt-12">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-lg font-semibold">All Restaurants</p>
-            <button className="text-sm text-white/80 hover:text-white">See all →</button>
+            <p className="text-lg font-semibold text-slate-900">All Restaurants</p>
+            <button className="text-sm text-slate-700 hover:text-slate-900">See all →</button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {gridRestaurants.map((r) => (
@@ -307,8 +305,8 @@ export default function Restaurants() {
         {/* FEATURED FOOD ITEMS */}
         <div className="mt-12">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-lg font-semibold">Popular Near You</p>
-            <button className="text-sm text-white/80 hover:text-white">View menu →</button>
+            <p className="text-lg font-semibold text-slate-900">Popular Near You</p>
+            <button className="text-sm text-slate-700 hover:text-slate-900">View menu →</button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {foodItems.map((f) => (
@@ -320,7 +318,7 @@ export default function Restaurants() {
         {/* HORIZONTAL SCROLLER */}
         <div className="mt-12">
           <div className="flex items-center justify-between mb-3">
-            <p className="text-lg font-semibold">Best Sellers</p>
+            <p className="text-lg font-semibold text-slate-900">Best Sellers</p>
           </div>
           <div className="relative -mx-4 px-4">
             <div className="overflow-x-auto no-scrollbar">

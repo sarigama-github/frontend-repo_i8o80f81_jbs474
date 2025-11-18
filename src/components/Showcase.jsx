@@ -33,14 +33,14 @@ const steps = [
 
 function Showcase() {
   return (
-    <section className="relative bg-[#0b0b14] py-20">
+    <section className="relative bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* How it works */}
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
             How it works
           </h2>
-          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
+          <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             From finding the right pro or place to booking and paying securely — everything is streamlined.
           </p>
         </div>
@@ -51,32 +51,31 @@ function Showcase() {
             return (
               <div
                 key={i}
-                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40"
+                className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition"
               >
                 {/* Background image */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-80"
                   style={{ backgroundImage: `url(${s.img})` }}
                 />
                 {/* Gradient overlays for readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-indigo-600/0 opacity-0 group-hover:opacity-20 blur-2xl transition pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
 
                 {/* Content */}
                 <div className="relative p-6">
                   <div className="flex items-start gap-3">
-                    <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-white/10 text-white backdrop-blur-sm border border-white/10">
+                    <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-white text-slate-900 border border-slate-200 shadow-sm">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/80">{s.step}</p>
-                      <h3 className="text-xl font-semibold text-white mt-1 drop-shadow-sm">{s.title}</h3>
-                      <p className="text-white/80 text-sm mt-2 max-w-md">{s.desc}</p>
+                      <p className="text-xs text-slate-700">{s.step}</p>
+                      <h3 className="text-xl font-semibold text-slate-900 mt-1">{s.title}</h3>
+                      <p className="text-slate-700 text-sm mt-2 max-w-md">{s.desc}</p>
                     </div>
                   </div>
 
                   <div className="mt-5">
-                    <button className="text-sm font-medium text-white/90 hover:text-white">Learn more →</button>
+                    <button className="text-sm font-medium text-indigo-600 hover:text-indigo-700">Learn more →</button>
                   </div>
                 </div>
               </div>
@@ -91,24 +90,24 @@ function Showcase() {
             { label: 'Bookings protected', value: '100% escrow' },
             { label: 'Verified professionals', value: '40k+' },
           ].map((m, i) => (
-            <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-              <p className="text-sm text-white/70">{m.label}</p>
-              <p className="mt-1 text-xl font-semibold text-white">{m.value}</p>
+            <div key={i} className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+              <p className="text-sm text-slate-600">{m.label}</p>
+              <p className="mt-1 text-xl font-semibold text-slate-900">{m.value}</p>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
             One account. Endless possibilities.
           </h3>
-          <p className="text-white/70 mt-3 max-w-2xl mx-auto">
+          <p className="text-slate-600 mt-3 max-w-2xl mx-auto">
             Whether you need a logo, a weekend getaway, or a plumber tomorrow morning — it all starts here.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3">
-            <button className="px-5 py-3 rounded-lg text-white font-semibold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 hover:opacity-90 transition shadow-lg shadow-indigo-900/30">Get Started Free</button>
-            <button className="px-5 py-3 rounded-lg text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition">Talk to sales</button>
+            <button className="px-5 py-3 rounded-lg text-white font-semibold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 hover:opacity-90 transition shadow-lg/30">Get Started Free</button>
+            <button className="px-5 py-3 rounded-lg text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition">Talk to sales</button>
           </div>
         </div>
       </div>

@@ -4,35 +4,32 @@ import { CheckCircle, BadgeCheck, MapPin, Star, Leaf, Zap, Timer, Package } from
 // Card 1 — Farmer Product Snapshot Card
 function FarmerProductSnapshotCard({ item }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-neutral-900/40 ring-1 ring-white/10 hover:ring-white/20 transition shadow-lg">
+    <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md">
       <div className="relative">
         <img src={item.img} alt={item.name} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/30 to-white" />
       </div>
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <h3 className="text-lg font-semibold tracking-tight">{item.name}</h3>
-            <div className="mt-1 text-sm text-white/80">{item.price} <span className="text-white/60">{item.unit}</span></div>
+            <h3 className="text-lg font-semibold tracking-tight text-slate-900">{item.name}</h3>
+            <div className="mt-1 text-sm text-slate-700">{item.price} <span className="text-slate-500">{item.unit}</span></div>
             <div className="mt-2 inline-flex items-center gap-2 text-xs">
-              <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/20">{item.tag}</span>
+              <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200">{item.tag}</span>
             </div>
           </div>
         </div>
-        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3">
-          <div className="flex items-center gap-2 text-sm text-white/80">
-            <span className="inline-flex items-center gap-1"><BadgeCheck className="h-4 w-4 text-emerald-400" /> {item.farmer}</span>
-            <span className="text-white/30">•</span>
-            <span className="inline-flex items-center gap-1"><MapPin className="h-4 w-4 text-sky-300" /> {item.location}</span>
+        <div className="mt-4 flex items-center justify-between border-t border-slate-200 pt-3">
+          <div className="flex items-center gap-2 text-sm text-slate-700">
+            <span className="inline-flex items-center gap-1"><BadgeCheck className="h-4 w-4 text-emerald-500" /> {item.farmer}</span>
+            <span className="text-slate-300">•</span>
+            <span className="inline-flex items-center gap-1"><MapPin className="h-4 w-4 text-sky-500" /> {item.location}</span>
           </div>
           <div className="flex gap-2">
-            <button className="px-3 py-1.5 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium hover:opacity-90">Add to Cart</button>
-            <button className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-sm">Details</button>
+            <button className="px-3 py-1.5 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium text-white hover:opacity-90">Add to Cart</button>
+            <button className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-sm">Details</button>
           </div>
         </div>
-      </div>
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-        <div className="absolute -inset-1 rounded-[24px] bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-indigo-500/20 blur-2xl" />
       </div>
     </div>
   )
@@ -41,32 +38,29 @@ function FarmerProductSnapshotCard({ item }) {
 // Card 2 — Farmer Profile + Product Highlights
 function FarmerProfileCard({ farmer }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-neutral-900/40 ring-1 ring-white/10 hover:ring-white/20 transition shadow-lg p-5">
+    <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md p-5">
       <div className="flex items-start gap-4">
-        <img src={farmer.avatar} alt={farmer.name} className="h-16 w-16 rounded-xl object-cover ring-2 ring-white/10" />
+        <img src={farmer.avatar} alt={farmer.name} className="h-16 w-16 rounded-xl object-cover ring-2 ring-white shadow" />
         <div className="flex-1">
           <div className="flex items-center gap-2">
-            <h3 className="text-lg font-semibold tracking-tight">{farmer.name}</h3>
-            <CheckCircle className="h-4 w-4 text-emerald-400" />
+            <h3 className="text-lg font-semibold tracking-tight text-slate-900">{farmer.name}</h3>
+            <CheckCircle className="h-4 w-4 text-emerald-500" />
           </div>
-          <div className="mt-1 text-sm text-white/80">{farmer.type}</div>
-          <div className="mt-2 inline-flex items-center gap-2 text-sm text-white/80">
-            <Star className="h-4 w-4 text-yellow-300" />
+          <div className="mt-1 text-sm text-slate-700">{farmer.type}</div>
+          <div className="mt-2 inline-flex items-center gap-2 text-sm text-slate-700">
+            <Star className="h-4 w-4 text-yellow-500" />
             <span>{farmer.rating}</span>
-            <span className="text-white/40">({farmer.reviews} reviews)</span>
+            <span className="text-slate-400">({farmer.reviews} reviews)</span>
           </div>
         </div>
       </div>
       <div className="mt-5">
         <div className="flex -space-x-3">
           {farmer.topProducts.map((p, idx) => (
-            <img key={idx} src={p} alt="product" className="h-12 w-12 rounded-full object-cover ring-2 ring-neutral-900" />
+            <img key={idx} src={p} alt="product" className="h-12 w-12 rounded-full object-cover ring-2 ring-white shadow" />
           ))}
         </div>
-        <button className="mt-4 w-full rounded-lg bg-white/10 hover:bg-white/15 py-2 text-sm font-medium">View Full Farm</button>
-      </div>
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-        <div className="absolute -inset-1 rounded-[24px] bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-indigo-500/20 blur-2xl" />
+        <button className="mt-4 w-full rounded-lg bg-white border border-slate-200 hover:bg-slate-50 py-2 text-sm font-medium text-slate-900 shadow-sm">View Full Farm</button>
       </div>
     </div>
   )
@@ -75,37 +69,34 @@ function FarmerProfileCard({ farmer }) {
 // Card 3 — Product Grid Card with Badges & Metrics
 function ProductMetricsCard({ product }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-neutral-900/40 ring-1 ring-white/10 hover:ring-white/20 transition shadow-lg">
+    <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md">
       <div className="relative">
         <img src={product.img} alt={product.name} className="h-44 w-full object-cover transition duration-500 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white" />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           {product.badges.map((b, i) => (
-            <span key={i} className="px-2 py-1 rounded-full text-xs bg-white/10 backdrop-blur ring-1 ring-white/20">{b}</span>
+            <span key={i} className="px-2 py-1 rounded-full text-xs bg-white border border-slate-200 shadow-sm">{b}</span>
           ))}
         </div>
       </div>
       <div className="p-4">
-        <h3 className="text-base font-semibold">{product.name}</h3>
-        <div className="mt-1 text-sm text-white/80">{product.price} <span className="text-white/60">{product.unit}</span></div>
-        <div className="mt-3 grid grid-cols-3 gap-2 text-xs text-white/80">
-          <div className="flex items-center gap-1"><Leaf className="h-4 w-4 text-emerald-300" /> {product.metrics.moisture}%</div>
-          <div className="flex items-center gap-1"><Package className="h-4 w-4 text-sky-300" /> {product.metrics.weight}</div>
-          <div className="flex items-center gap-1"><Zap className="h-4 w-4 text-purple-300" /> {product.metrics.grade}</div>
+        <h3 className="text-base font-semibold text-slate-900">{product.name}</h3>
+        <div className="mt-1 text-sm text-slate-700">{product.price} <span className="text-slate-500">{product.unit}</span></div>
+        <div className="mt-3 grid grid-cols-3 gap-2 text-xs text-slate-700">
+          <div className="flex items-center gap-1"><Leaf className="h-4 w-4 text-emerald-600" /> {product.metrics.moisture}%</div>
+          <div className="flex items-center gap-1"><Package className="h-4 w-4 text-sky-600" /> {product.metrics.weight}</div>
+          <div className="flex items-center gap-1"><Zap className="h-4 w-4 text-purple-600" /> {product.metrics.grade}</div>
         </div>
-        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3">
-          <div className="flex items-center gap-2 text-sm text-white/80">
-            <Timer className="h-4 w-4 text-indigo-300" /> {product.delivery}
+        <div className="mt-4 flex items-center justify-between border-t border-slate-200 pt-3">
+          <div className="flex items-center gap-2 text-sm text-slate-700">
+            <Timer className="h-4 w-4 text-indigo-600" /> {product.delivery}
           </div>
-          <div className="text-sm text-white/70">Seller: <span className="font-medium text-white">{product.seller}</span></div>
+          <div className="text-sm text-slate-600">Seller: <span className="font-medium text-slate-900">{product.seller}</span></div>
         </div>
         <div className="mt-3 flex items-center justify-between">
-          <button className="px-3 py-1.5 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium hover:opacity-90">Add</button>
-          <button className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-sm">View More</button>
+          <button className="px-3 py-1.5 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium text-white hover:opacity-90">Add</button>
+          <button className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-sm">View More</button>
         </div>
-      </div>
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-        <div className="absolute -inset-1 rounded-[24px] bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-indigo-500/20 blur-2xl" />
       </div>
     </div>
   )
@@ -114,21 +105,18 @@ function ProductMetricsCard({ product }) {
 // Card 4 — Farm Category Card (Bulk, Animal, Crop)
 function FarmCategoryCard({ category }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl ring-1 ring-white/10 hover:ring-white/20 transition shadow-lg">
+    <div className="group relative overflow-hidden rounded-2xl ring-1 ring-slate-200 hover:ring-slate-300 transition shadow-sm hover:shadow-md bg-white">
       <img src={category.img} alt={category.name} className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white" />
       <div className="absolute bottom-0 left-0 right-0 p-5">
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-sm text-white/70">{category.farm}</div>
-            <h3 className="text-xl font-semibold">{category.name}</h3>
-            <p className="mt-1 text-sm text-white/80">{category.desc}</p>
+            <div className="text-sm text-slate-600">{category.farm}</div>
+            <h3 className="text-xl font-semibold text-slate-900">{category.name}</h3>
+            <p className="mt-1 text-sm text-slate-700">{category.desc}</p>
           </div>
-          <span className="px-2.5 py-1 rounded-full text-xs bg-white/10 ring-1 ring-white/20">{category.supply}</span>
+          <span className="px-2.5 py-1 rounded-full text-xs bg-white border border-slate-200 shadow-sm">{category.supply}</span>
         </div>
-      </div>
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-        <div className="absolute -inset-1 rounded-[24px] bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-indigo-500/20 blur-2xl" />
       </div>
     </div>
   )
@@ -273,18 +261,18 @@ export default function Farmers() {
   ]
 
   return (
-    <section className="relative py-20">
+    <section className="relative bg-white py-20">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 right-10 h-72 w-72 rounded-full bg-gradient-to-br from-blue-600/20 via-purple-600/10 to-indigo-600/20 blur-3xl" />
+        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-sm uppercase tracking-widest text-white/50">Farmers & Produce</p>
-            <h2 className="mt-2 text-3xl md:text-4xl font-bold">Fresh from local farms</h2>
-            <p className="mt-2 text-white/70 max-w-2xl">Shop trusted farmers, explore categories, and discover fresh, organic, and bulk products for homes and businesses.</p>
+            <p className="text-sm uppercase tracking-widest text-slate-500">Farmers & Produce</p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">Fresh from local farms</h2>
+            <p className="mt-2 text-slate-600 max-w-2xl">Shop trusted farmers, explore categories, and discover fresh, organic, and bulk products for homes and businesses.</p>
           </div>
-          <button className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium hover:opacity-90">See all</button>
+          <button className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-sm font-medium text-white hover:opacity-90">See all</button>
         </div>
 
         {/* Row 1 — Snapshot products */}

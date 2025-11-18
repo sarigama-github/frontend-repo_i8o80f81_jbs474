@@ -15,47 +15,27 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: white;
+    color: #0f172a; /* slate-900 */
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-white text-slate-900;
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Light theme utility refinements */
 @layer utilities {
-  .animate-in {
-    animation-name: animateIn;
-    animation-duration: 350ms;
-    --tw-enter-opacity: initial;
-    --tw-enter-scale: initial;
-    --tw-enter-rotate: initial;
-    --tw-enter-translate-x: initial;
-    --tw-enter-translate-y: initial;
+  .card-light {
+    @apply bg-white border border-slate-200 shadow-sm hover:shadow-md transition;
   }
-
-  .animate-out {
-    animation-name: animateOut;
-    animation-duration: 350ms;
-    --tw-exit-opacity: initial;
-    --tw-exit-scale: initial;
-    --tw-exit-rotate: initial;
-    --tw-exit-translate-x: initial;
-    --tw-exit-translate-y: initial;
+  .muted {
+    @apply text-slate-500;
   }
-
-  /* Softer, vivid background with subtle grid and radial color washes */
-  .app-bg {
-    /* Base */
-    background-color: #0b0b14;
-    /* Top grid (very subtle) */
-    background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 28px),
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 28px),
-      radial-gradient(650px 400px at 20% -10%, rgba(99,102,241,0.25), transparent 60%),
-      radial-gradient(800px 500px at 110% 10%, rgba(147,51,234,0.22), transparent 60%),
-      radial-gradient(600px 420px at -10% 110%, rgba(56,189,248,0.18), transparent 60%),
-      linear-gradient(180deg, #0b0b14 0%, #0e1022 35%, #0a0b1a 100%);
-    background-blend-mode: normal, normal, screen, screen, screen, normal;
+  .muted-2 {
+    @apply text-slate-600;
+  }
+  .pill-light {
+    @apply text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200;
   }
 }

@@ -30,7 +30,7 @@ const local = [
 
 function Pill({ label }) {
   return (
-    <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-black/40 backdrop-blur text-white/80 border border-white/20">
+    <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
       {label}
     </span>
   )
@@ -39,23 +39,22 @@ function Pill({ label }) {
 function Card({ item, badge }) {
   const Icon = item.icon
   return (
-    <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40">
+    <div className="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-80"
         style={{ backgroundImage: `url(${item.img})` }}
       />
       {/* Gradient overlays for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
-      <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-600/0 via-purple-600/0 to-indigo-600/0 opacity-0 group-hover:opacity-20 blur-2xl transition" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/40 to-white" />
 
       {/* Content */}
       <div className="relative p-4 sm:p-5 flex items-center gap-3">
-        <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-white/10 text-white backdrop-blur-sm border border-white/10">
+        <div className="h-11 w-11 rounded-xl flex items-center justify-center bg-white text-slate-900 border border-slate-200 shadow-sm">
           <Icon className="h-5 w-5" />
         </div>
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-white drop-shadow-sm truncate">{item.name}</p>
+          <p className="text-sm font-semibold text-slate-900 truncate">{item.name}</p>
           <div className="mt-1"><Pill label={badge} /></div>
         </div>
       </div>
@@ -84,7 +83,7 @@ export default function Services() {
   ]
 
   return (
-    <section className="relative bg-[#0b0b14] py-20">
+    <section className="relative bg-white py-20">
       <style>{`
         @keyframes marqueeX {
           0% { transform: translateX(0); }
@@ -94,27 +93,27 @@ export default function Services() {
 
       {/* Top divider */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+        <div className="mx-auto max-w-6xl h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
             All services in one place
           </h2>
-          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
+          <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             Browse popular categories from global freelancing and trusted local professionals — unified in a single marketplace.
           </p>
         </div>
 
         {/* Animated image ribbon showcasing services */}
-        <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b14] via-transparent to-[#0b0b14] pointer-events-none" />
+        <div className="relative mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white pointer-events-none" />
           <div className="flex gap-3 p-3" style={{ width: '200%' }}>
             {[0,1].map((dup) => (
               <div key={dup} className="flex gap-3" style={{ animation: 'marqueeX 25s linear infinite' }}>
                 {stripImages.map((src, idx) => (
-                  <div key={`${dup}-${idx}`} className="h-20 sm:h-24 w-36 sm:w-44 rounded-xl overflow-hidden border border-white/10 bg-black/30">
+                  <div key={`${dup}-${idx}`} className="h-20 sm:h-24 w-36 sm:w-44 rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
                     <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${src})` }} />
                   </div>
                 ))}
@@ -125,7 +124,7 @@ export default function Services() {
 
         {/* Tabs */}
         <div className="mt-8 flex items-center justify-center">
-          <div className="inline-flex rounded-xl border border-white/10 bg-white/5 p-1">
+          <div className="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-1">
             {tabs.map(t => {
               const active = t === filter
               return (
@@ -134,8 +133,8 @@ export default function Services() {
                   onClick={() => setFilter(t)}
                   className={`px-3 sm:px-4 py-2 text-sm rounded-lg transition ${
                     active
-                      ? 'bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-white shadow-lg shadow-indigo-900/30'
-                      : 'text-white/80 hover:text-white hover:bg-white/10'
+                      ? 'bg-white text-slate-900 shadow-sm border border-slate-200'
+                      : 'text-slate-700 hover:text-slate-900 hover:bg-white/60'
                   }`}
                 >
                   {t}
@@ -153,7 +152,7 @@ export default function Services() {
         </div>
 
         {/* Note */}
-        <div className="mt-10 text-center text-white/60 text-sm">
+        <div className="mt-10 text-center text-slate-600 text-sm">
           Looking for something specific? Use search or tell us what you need — we’ll match you instantly.
         </div>
       </div>
